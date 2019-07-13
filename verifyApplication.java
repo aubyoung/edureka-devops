@@ -2,6 +2,7 @@ package selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class verifyApplication {
 
@@ -9,7 +10,11 @@ public class verifyApplication {
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
-		ChromeDriver driver = new ChromeDriver();
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+			
+		ChromeDriver driver = new ChromeDriver(options);
 		
 		driver.manage().window().maximize();
 		
